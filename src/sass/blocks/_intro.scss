@@ -1,0 +1,175 @@
+.intro {
+  padding-left: $page-side-margin-desktop;
+  display: grid;
+  grid-template-columns: 0.39fr 0.61fr;
+  grid-template-rows: min-content min-content min-content 1fr;
+  column-gap: 50px;
+  align-items: center;
+  grid-template-areas:
+  "heading stikybike"
+  "paragraph stikybike"
+  "button stikybike"
+  "systemsix stikybike";
+
+  @include tablet {
+    grid-template-columns: fit-content(220px) minmax(240px, 1fr);
+    column-gap: 20px;
+  }
+
+  @include mobile {
+    padding: 0 $page-side-margin-mobile;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "heading"
+    "stikybike"
+    "paragraph "
+    "button";
+  }
+
+
+  &__heading {
+    grid-area: heading;
+    @include heading-h2;
+    margin-top: 80px;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    grid-area: paragraph;
+    align-self: start;
+    @include paragraph-normal;
+    margin: 10% auto 10% 0;
+    }
+
+  &__button-container {
+    grid-area: button;
+    align-self: start;
+    position: relative;
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 46px;
+      width: 100%;
+    }
+
+  }
+
+  &__button {
+
+    @include button-styles-reset;
+    width: 100%;
+    height: 100%;
+    background-color: $color-green-light;
+    border-radius: 4px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background-color: #319E75;
+      transition: all 5s linear;
+    }
+
+    &:hover:before {
+      left: 0;
+    }
+
+    &::after {
+      content: "Подробнее";
+      position: relative;
+      color: white;
+      font-family: $font;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+
+    @include tablet {
+      height: 46px;
+      width: 100%;
+    }
+
+    @include mobile {
+    }
+
+
+  }
+
+  &__systemsix {
+    grid-area: systemsix;
+    // margin: 167px auto 209px 0;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__caption {
+    font-family: $font;
+    font-weight: 400;
+    font-size: clamp(12px, 1.85vw, 18px);
+    line-height: 1;
+    color: inherit;
+  }
+
+  &__line {
+    width: 132px;
+    border-top: 2px solid #d7d4d4;
+  }
+
+  &__stiky-bike {
+    grid-area: stikybike;
+    box-sizing: border-box;
+    aspect-ratio: 810 / 856 ;
+    // padding-top: 20px;
+    padding-bottom: clamp(37px, 5.4vw , 79px);
+    background-image: url(../../images/intro-nature-photo.jpg);
+    background-origin: padding-box;
+    background-size: 75%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    @include tablet {
+      aspect-ratio: 284 / 348;
+      background-size: 90%;
+    }
+  }
+
+  &__frame4bike {
+    // width: clamp(234px, 55% , 440px);
+    width: 55%;
+    aspect-ratio: 440 / 352;
+    background-color: $color-badge;
+    border-radius: 20px;
+    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+    position: sticky;
+    top: clamp(210px, 24vw, 347px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__bike-photo {
+    width: 77%;
+  }
+
+}

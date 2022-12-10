@@ -1,0 +1,77 @@
+.mailing {
+  background-color: #EFEFEF;
+  padding: 80px $page-side-margin-desktop 40px $page-side-margin-desktop;
+
+  &_theme_dark {
+    background-color: #2F2F2F;
+  }
+
+  @include mobile {
+    padding: 60px $page-side-margin-mobile 40px $page-side-margin-mobile;
+    ;
+  }
+
+  &__ask-message {
+    font-family: $font;
+    max-width: 230px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__input-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 360px;
+    border: unset;
+  }
+
+  &__input-email {
+    border: none;
+    margin: 0;
+    padding: 11px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: $font;
+    color: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 28px;
+    outline: 1px solid #C7C7C7;
+    opacity: .5;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::placeholder {
+      color: inherit;
+    }
+
+    &:focus {
+      opacity: 1;
+
+    }
+  }
+
+    &__send-button {
+      @include button-styles-reset;
+      display: none;
+      position: absolute;
+      top: 11px;
+      right: 22px;
+      font-family: Inter;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: right;
+
+      &_active {
+        display: block;
+      }
+    }
+}

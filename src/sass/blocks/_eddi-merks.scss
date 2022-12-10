@@ -1,0 +1,84 @@
+.eddi-merks {
+  padding-left: $page-side-margin-desktop;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content auto;
+  column-gap: 8%;
+
+  @include mobile {
+    padding: 0 $page-side-margin-mobile;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content auto auto;
+    row-gap: 40px;
+  }
+
+  &__photo {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 100%;
+
+    @include mobile {
+      grid-row: 1;
+    }
+
+  }
+
+  &__quote {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+    margin-right: $page-side-margin-desktop;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(18px, 2.9vw, 34px);
+    line-height: 1.29;
+    letter-spacing: -0.5px ;
+    color: inherit;
+
+    @include mobile {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+
+  &__caption {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+
+    @include mobile {
+      grid-column: 1;
+      grid-row: 3;
+    }
+  }
+
+  &__author {
+    margin: 0;
+    padding: 0;
+    margin-bottom: clamp(4px, 1.25vw, 6px);
+    font-family: $font ;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.57;
+    color: inherit;
+  }
+
+  &__author-rank {
+    margin: 0;
+    padding: 0;
+    font-family: $font ;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(10px, 1.8vw, 16px);
+    line-height: 1.57;
+    color: $color-liteTheme-paragraph;
+
+    &_theme_dark {
+      color: $color-darkTheme-text;
+    }
+  }
+
+}

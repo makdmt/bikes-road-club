@@ -1,0 +1,50 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #EFEFEF;
+    padding: 60px $page-side-margin-desktop 60px $page-side-margin-desktop;
+
+    &_theme_dark {
+      background-color: #2F2F2F;
+    }
+
+    @include tablet {
+      padding: 60px $page-side-margin-mobile 25px $page-side-margin-mobile;
+      ;
+    }
+
+
+    &__copyright {
+       font-family: $font;
+       font-size: 14px;
+       font-weight: 600;
+       line-height: 20px;
+       letter-spacing: 0em;
+       text-align: left;
+       color: #cfcfcf;
+
+       @include mobile {
+        font-weight: 500;
+       }
+
+     }
+
+     &__theme-control {
+        display: flex;
+
+        @include mobile {
+          display: none;
+        }
+    }
+
+    &__logo {
+        width: 38px;
+        display: none;
+        stroke: currentColor;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+}

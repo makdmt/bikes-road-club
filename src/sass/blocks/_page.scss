@@ -1,0 +1,16 @@
+.page {
+  background-color: $color-badge;
+  color: $color-black;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  transition: all .3s;
+  &_lock {
+    overflow: hidden;
+  }
+
+  &_theme_dark {
+    background-color: $color-darkTheme-background;
+    color: white;
+  }
+}

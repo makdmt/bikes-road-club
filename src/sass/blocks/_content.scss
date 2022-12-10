@@ -1,0 +1,49 @@
+.content {
+  padding-top: 74px;
+  // max-width: 1320px;
+  // padding-left: $page-side-margin-desktop;
+  display: flex;
+  flex-direction: column;
+  // row-gap: 120px;
+
+  &__separator {
+    width: calc(100% - $page-side-margin-mobile*2);
+    padding: 0;
+    margin: 0 auto;
+    border: unset;
+    box-sizing: border-box;
+    padding-top: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid transparent;
+
+    @include tablet {
+      padding-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      padding-top: 80px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #E3E3E3;
+    }
+
+  &_position_eddi {
+    @include mobile {
+    margin-bottom: 20px;
+    }
+  }
+
+  &_position_trainings {
+    @include mobile {
+    padding-top: 40px;
+    }
+  }
+  }
+
+  @include mobile {
+    padding-left: 0;
+
+    // padding-right: $page-side-margin-mobile;
+  }
+
+}

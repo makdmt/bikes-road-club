@@ -1,0 +1,200 @@
+.bikes {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  &__heading {
+    @include heading-h2;
+    margin-left: $page-side-margin-desktop;
+
+    @include mobile {
+      margin-left: $page-side-margin-mobile;
+    }
+  }
+
+  &__type-selectors-container {
+    display: flex;
+    gap: 40px;
+    padding: 0 $page-side-margin-desktop;
+    // padding: 0 8vw;
+    @include mobile {
+      padding: 40px $page-side-margin-mobile 0 $page-side-margin-mobile;
+    }
+  }
+
+  &__type-btn {
+    @include button-styles-reset;
+    font-family: $font;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: $color-liteTheme-paragraph;
+
+    &_theme_dark {
+      color: $color-darkTheme-text;
+    }
+    @include hover-opacity(0.75);
+
+    &_active {
+      font-weight: 600;
+      color: inherit;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__type-selector {
+    display: none;
+    width: 114px;
+    height: 30px;
+    // margin: 0 auto 20px 0;
+    border: 1px solid #E3E3E3;
+    border-radius: 2px;
+    background-color: transparent;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 600;
+    color: inherit;
+    font-size: 11px;
+    line-height: 14px;
+    padding-left: 12px;
+
+    @include tablet {
+      display: block;
+    }
+
+  }
+
+  &__slider-window {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: clamp(20px, 12.5vw, 120px);
+    padding-bottom: 60px;
+
+    @include mobile {
+      margin: 0 auto;
+      padding-bottom: 40px;
+
+    }
+  }
+
+  &__slider-container {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    right: -150%;
+    top: 0;
+    // display: none;
+    // width: max-content;
+    gap: 30px;
+    transition: all .3s;
+
+    @include tablet {
+      // gap: 15px;
+    }
+
+    &_active {
+      position: relative;
+      // left: 0;
+
+      transform: translateX(-142.2%);
+
+      @include mobile {
+        transform: translateX(-143.5%);
+      }
+
+    }
+  }
+
+  &__card {
+    color: unset;
+    text-decoration: none;
+    position: relative;
+  }
+
+  &__plate {
+    width: 26vw;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: $color-badge;
+    // box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+    @include shadow($smallshadow);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include mobile {
+      width: 85vw;
+      max-width: unset;
+
+    }
+
+  }
+
+  &__img {
+    width: 89%;
+    border-radius: 20px;
+  }
+
+  &__model {
+    margin: 0;
+    padding: 0;
+    max-width: 95%;
+    margin-top: 22px;
+    font-family: $font;
+    font-weight: 600;
+    font-size: clamp(14px, 1.5vw ,18px);
+    line-height: 1.55;
+    color: inherit;
+
+    @include tablet {
+      font-size: 10px;
+    }
+
+    @include mobile {
+      position: absolute;
+      bottom: 0;
+      font-size: 14px;
+      margin-bottom: 16px;
+      text-align: center;
+      justify-self: end;
+      align-self: end;
+      width: 95%;
+
+    }
+  }
+
+  &__slider-indicator {
+    position: absolute;
+    bottom: 20px;
+    display: none;
+    width: 100%;
+    gap: 5px;
+    justify-content: center;
+    align-items: flex-end;
+
+    @include mobile {
+      display: flex
+    }
+  }
+
+  &__slider-btn {
+    @include button-styles-reset;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #cacaca;
+
+    &_active {
+      background-color: $color-black;
+    }
+  }
+
+}

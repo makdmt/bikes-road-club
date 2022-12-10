@@ -1,0 +1,115 @@
+@mixin shadow($shadowValue){
+  -moz-box-shadow: $shadowValue;
+  -webkit-box-shadow: ($shadowValue);
+  box-shadow: $shadowValue;
+}
+
+@mixin heading-h2 {
+  margin: 0;
+  padding: 0;
+  max-width: 460px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 700;
+  // font-size: 55px;
+  font-size: clamp(32px, 4.5vw ,55px);
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: inherit;
+
+
+}
+
+@mixin heading-h2-mobile {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin paragraph-normal {
+  margin: 0;
+  padding: 0;
+  max-width: 460px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(12px, 2.7vw, 18px);
+  line-height: 1.55;
+  color: $color-liteTheme-paragraph;
+
+  &_theme_dark {
+    color: $color-darkTheme-text;
+  }
+
+  @include tablet {
+    max-width: 75vw;
+    font-size: clamp(12px, 2.1vw, 18px);
+  }
+
+
+  @include mobile {
+    max-width: 85vw;
+    font-size: clamp(12px, 3.75vw, 18px);
+  }
+}
+
+@mixin link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.55;
+  color: inherit;
+  // color: $color-black;
+  cursor: pointer;
+
+  &_theme_dark {
+    color: white;
+  }
+
+}
+
+@mixin button-styles-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+}
+
+// @mixin pseudo-top-padding {
+//   &:before {
+//     display: block;
+//     content: "";
+//     height: 74px;
+//   }
+// }
+
+@mixin hover-opacity($opacityValue) {
+  transition: opacity .3s;
+  &:hover {
+    opacity: $opacityValue;
+  }
+}
+
+  @mixin mobile {
+    @media (max-width: 550px) {
+      @content;
+    }
+  }
+
+  @mixin tablet {
+    // @media (max-width: 960px) {
+      @media (max-width: 800px) {
+      @content;
+    }
+  }
+
+  @mixin desktop {
+    @media (max-width: 1080px) {
+      @content;
+    }
+  }
