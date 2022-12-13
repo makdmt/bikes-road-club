@@ -769,6 +769,9 @@
     display: block;
   }
 }
+.bikes__type-selector-option_theme_dark {
+  background-color: #333333;
+}
 .bikes__slider-window {
   width: 100%;
   position: relative;

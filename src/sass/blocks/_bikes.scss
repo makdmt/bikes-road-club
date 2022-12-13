@@ -69,6 +69,12 @@
 
   }
 
+  &__type-selector-option {
+    &_theme_dark{
+      background-color: $color-darkTheme-background;
+    }
+  }
+
   &__slider-window {
     width: 100%;
     position: relative;
