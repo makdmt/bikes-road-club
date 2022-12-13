@@ -435,6 +435,7 @@
 }
 .intro__bike-photo {
   width: 77%;
+  border-radius: 20px;
 }
 
 .eddi-merks {
@@ -768,6 +769,9 @@
     display: block;
   }
 }
+.bikes__type-selector-option_theme_dark {
+  background-color: #333333;
+}
 .bikes__slider-window {
   width: 100%;
   position: relative;
@@ -848,6 +852,7 @@
 @media (max-width: 550px) {
   .bikes__model {
     position: absolute;
+    color: black;
     bottom: 0;
     font-size: 14px;
     margin-bottom: 16px;

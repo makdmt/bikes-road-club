@@ -13,6 +13,7 @@ modifiedClasses = [
   'pavements__slider-button',
   'bikes__paragraph',
   'bikes__type-btn',
+  'bikes__type-selector-option',
   'trainings__paragraph',
   'mailing',
   'footer'
