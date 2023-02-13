@@ -16,6 +16,7 @@ $color-darkTheme-text: rgba(#e6e6e6, .7);
 
 
 $font: 'Inter', 'Arial', 'sans-serif';
-$page-side-margin-desktop: 7.5vw;
+$page-side-margin-desktop: clamp(20px, 8.5vw, 120px);
+$page-side-margin-tablet: clamp(30px, 5.5vw, 80px);
 $page-side-margin-mobile: 5.6vw;
 $smallshadow: 0px 20px 140px rgba(0, 0, 0, 0.06);

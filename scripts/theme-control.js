@@ -25,19 +25,14 @@ function changeTheme() {
   modifiedClasses.forEach((className) => modifyElementsByClassName(className));
 }
 
-const addThemeButtonClickListener = (button) => button.addEventListener('click', changeTheme);
-themeBtns.forEach(addThemeButtonClickListener);
-
 function modifyElementsByClassName(className) {
-  console.log(className);
+  // console.log(className);
   let elements4Modify = document.querySelectorAll(`.${className}`);
   elements4Modify.forEach(element => element.classList.toggle(`${className}_theme_dark`));
 };
 
-// const themeCtrlBlocks = document.querySelectorAll('.theme-control');
-// themeBtn.addEventListener('click', () => {
-//   themeBtn.classList.toggle('theme-control__switcher_theme_dark');
-//   page.classList.toggle('page_theme_dark');
-//   themeCtrlBlock.classList.toggle('theme-control_theme_dark');
+const addThemeButtonClickListener = (button) => button.addEventListener('click', changeTheme);
+themeBtns.forEach(addThemeButtonClickListener);
 
-// })
+
+

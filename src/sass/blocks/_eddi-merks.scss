@@ -1,12 +1,13 @@
 .eddi-merks {
-  padding-left: $page-side-margin-desktop;
+  // padding-left: $page-side-margin-desktop;
+  @include paddings;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: .52fr .48fr;
   grid-template-rows: min-content auto;
-  column-gap: 8%;
+  column-gap: clamp(30px, 5.5vw, 80px);
 
   @include mobile {
-    padding: 0 $page-side-margin-mobile;
+    // padding: 0 $page-side-margin-mobile;
     grid-template-columns: 1fr;
     grid-template-rows: min-content auto auto;
     row-gap: 40px;
@@ -32,14 +33,19 @@
     font-family: $font;
     font-style: normal;
     font-weight: 600;
-    font-size: clamp(18px, 2.9vw, 34px);
+    font-size: clamp(23px, 2.9vw, 34px);
     line-height: 1.29;
     letter-spacing: -0.5px ;
     color: inherit;
 
+    @include tablet {
+      margin-right: $page-side-margin-mobile;
+    }
+
     @include mobile {
       grid-column: 1;
       grid-row: 2;
+      margin-right: 0;
     }
   }
 

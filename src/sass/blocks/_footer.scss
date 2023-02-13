@@ -1,8 +1,9 @@
 .footer{
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     background-color: #EFEFEF;
-    padding: 60px $page-side-margin-desktop 60px $page-side-margin-desktop;
+    padding: 48px $page-side-margin-desktop 60px $page-side-margin-desktop;
 
     &_theme_dark {
       background-color: #2F2F2F;
@@ -13,6 +14,11 @@
       ;
     }
 
+    @include mobile {
+      padding: 50px $page-side-margin-mobile 25px $page-side-margin-mobile;
+      align-items: center;
+    }
+
 
     &__copyright {
        font-family: $font;
@@ -20,6 +26,8 @@
        font-weight: 600;
        line-height: 20px;
        letter-spacing: 0em;
+       margin: 0;
+       padding: 0;
        text-align: left;
        color: #cfcfcf;
 
@@ -38,7 +46,7 @@
     }
 
     &__logo {
-        width: 38px;
+        width: 34px;
         display: none;
         stroke: currentColor;
 

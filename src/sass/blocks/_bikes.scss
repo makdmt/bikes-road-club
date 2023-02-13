@@ -9,6 +9,10 @@
     @include heading-h2;
     margin-left: $page-side-margin-desktop;
 
+    @include tablet {
+      margin-left: $page-side-margin-tablet;
+    }
+
     @include mobile {
       margin-left: $page-side-margin-mobile;
     }
@@ -19,6 +23,11 @@
     gap: 40px;
     padding: 0 $page-side-margin-desktop;
     // padding: 0 8vw;
+
+    @include tablet {
+      padding: 0 $page-side-margin-tablet;
+    }
+
     @include mobile {
       padding: 40px $page-side-margin-mobile 0 $page-side-margin-mobile;
     }
@@ -61,7 +70,7 @@
     color: inherit;
     font-size: 11px;
     line-height: 14px;
-    padding-left: 12px;
+    padding-left: 6px;
 
     @include tablet {
       display: block;
@@ -81,11 +90,11 @@
     overflow-x: hidden;
     overflow-y: visible;
     padding-top: clamp(20px, 12.5vw, 120px);
-    padding-bottom: 60px;
+    padding-bottom: 85px;
 
     @include mobile {
       margin: 0 auto;
-      padding-bottom: 40px;
+      padding-bottom: 61px;
 
     }
   }
@@ -111,7 +120,7 @@
 
       transform: translateX(-142.2%);
 
-      @include mobile {
+      @include tablet {
         transform: translateX(-143.5%);
       }
 
@@ -122,6 +131,8 @@
     color: unset;
     text-decoration: none;
     position: relative;
+
+    @include hover-opacity(0.7);
   }
 
   &__plate {
@@ -137,7 +148,8 @@
     justify-content: center;
     align-items: center;
     @include mobile {
-      width: 85vw;
+      // width: 85vw;
+      width: 90vw;
       max-width: unset;
 
     }
@@ -145,8 +157,13 @@
   }
 
   &__img {
-    width: 89%;
+    width: 88%;
     border-radius: 20px;
+
+    @include mobile {
+      padding-bottom: 30px;
+
+    }
   }
 
   &__model {
@@ -154,6 +171,7 @@
     padding: 0;
     max-width: 95%;
     margin-top: 22px;
+    margin-left: 10px;
     font-family: $font;
     font-weight: 600;
     font-size: clamp(14px, 1.5vw ,18px);
@@ -162,6 +180,7 @@
 
     @include tablet {
       font-size: 10px;
+      margin-left: 0;
     }
 
     @include mobile {
@@ -180,7 +199,7 @@
 
   &__slider-indicator {
     position: absolute;
-    bottom: 20px;
+    bottom: 39px;
     display: none;
     width: 100%;
     gap: 5px;
