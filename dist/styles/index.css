@@ -147,9 +147,6 @@
   border-top: 3px solid #151515;
   transition: all 0.3s;
 }
-.burger-menu__burger::before_active {
-  transform: rotate(45deg);
-}
 .burger-menu__burger:after {
   content: "";
   position: absolute;

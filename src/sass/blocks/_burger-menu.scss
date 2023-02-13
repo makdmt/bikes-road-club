@@ -39,9 +39,9 @@
       border-top: 3px solid $color-black;
       // border-color: inherit;
       transition: all .3s;
-      &_active {
-        transform: rotate(45deg);
-      }
+      // &_active {
+      //   transform: rotate(45deg);
+      // }
     }
     &:after {
       content: '';
