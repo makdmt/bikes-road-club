@@ -116,23 +116,14 @@
     height: clamp(24px, 5.5vw, 50px);
     border-radius: 50%;
     background-color: $color-gray;
-    background-position: center center;
-    background-size: 18%;
-    background-repeat: no-repeat;
+    font-size: clamp(4.5px, 1vw, 7px);
 
     &_theme_dark {
       background-color: #434343;
+      color: $color-darkTheme-heading;
     }
 
     @include hover-opacity(0.75);
-
-    &_direction_previous {
-      background-image: url(../../images/pavements-button-previous.svg);
-    }
-
-    &_direction_next {
-      background-image: url(../../images/pavements-button-next.svg);
-    }
 
   }
 

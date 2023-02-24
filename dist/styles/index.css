@@ -395,6 +395,11 @@
   letter-spacing: 1px;
   z-index: 2;
 }
+@media (max-width: 550px) {
+  .intro__button::after {
+    font-size: 13px;
+  }
+}
 @media (max-width: 840px) {
   .intro__button {
     height: 46px;
@@ -726,22 +731,15 @@
   height: clamp(24px, 5.5vw, 50px);
   border-radius: 50%;
   background-color: #ebebeb;
-  background-position: center center;
-  background-size: 18%;
-  background-repeat: no-repeat;
+  font-size: clamp(4.5px, 1vw, 7px);
   transition: opacity 0.3s;
 }
 .pavements__slider-button_theme_dark {
   background-color: #434343;
+  color: #ffffff;
 }
 .pavements__slider-button:hover {
   opacity: 0.75;
-}
-.pavements__slider-button_direction_previous {
-  background-image: url(../../images/pavements-button-previous.svg);
-}
-.pavements__slider-button_direction_next {
-  background-image: url(../../images/pavements-button-next.svg);
 }
 
 .bikes {
@@ -1209,7 +1207,7 @@
 }
 @media (max-width: 840px) {
   .footer {
-    padding: 60px 5.6vw 25px 5.6vw;
+    padding: 60px clamp(30px, 5.5vw, 80px) 25px clamp(30px, 5.5vw, 80px);
   }
 }
 @media (max-width: 550px) {

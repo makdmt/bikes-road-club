@@ -10,8 +10,7 @@
     }
 
     @include tablet {
-      padding: 60px $page-side-margin-mobile 25px $page-side-margin-mobile;
-      ;
+      padding: 60px $page-side-margin-tablet 25px $page-side-margin-tablet;
     }
 
     @include mobile {

@@ -27,8 +27,8 @@ function changeTheme() {
 
 function modifyElementsByClassName(className) {
   // console.log(className);
-  let elements4Modify = document.querySelectorAll(`.${className}`);
-  elements4Modify.forEach(element => element.classList.toggle(`${className}_theme_dark`));
+  let elementsToModify = document.querySelectorAll(`.${className}`);
+  elementsToModify.forEach(element => element.classList.toggle(`${className}_theme_dark`));
 };
 
 const addThemeButtonClickListener = (button) => button.addEventListener('click', changeTheme);

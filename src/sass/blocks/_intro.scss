@@ -107,16 +107,16 @@
       font-style: normal;
       letter-spacing: 1px;
       z-index: 2;
+
+      @include mobile {
+        font-size: 13px;
+      }
     }
 
     @include tablet {
       height: 46px;
       width: 100%;
     }
-
-    @include mobile {
-    }
-
 
   }
 

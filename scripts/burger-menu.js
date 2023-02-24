@@ -10,10 +10,10 @@ burgerBtn.addEventListener('click', () => {
 })
 
 
-const addListener2BurgerLink = (link) => link.addEventListener('click', () => {
+const addListenerToBurgerLink = (link) => link.addEventListener('click', () => {
   burgerBtn.classList.remove('burger-menu__burger_active');
   burgerMenu.classList.remove('burger-menu__menu_active');
   page.classList.remove('page_lock');
 })
 
-burgerLinks.forEach(addListener2BurgerLink);
+burgerLinks.forEach(addListenerToBurgerLink);
