@@ -1,11 +1,7 @@
 .pavements {
-  padding-left: $page-side-margin-desktop;
+  // padding-left: $page-side-margin-desktop;
+  @include paddings;
   position: relative;
-
-
-  @include mobile {
-    padding-left: $page-side-margin-mobile;
-  }
 
   &__heading {
     @include heading-h2;
@@ -17,6 +13,7 @@
     @include paragraph-normal;
     margin-bottom: clamp(40px, 6vw, 80px);;
     order: 2;
+
     @include mobile {
       order: 3;
       margin-bottom: 0;
@@ -49,9 +46,9 @@
   &__card-photos-container {
     display: flex;
     position: relative;
-    gap: 2.7vw;
+    gap: clamp(20px, 2.7vw, 40px);
     order: 3;
-    margin-bottom: clamp(40px, 12.5vw, 50px);
+    margin-bottom: clamp(40px, 11.5vw, 50px);
     @include mobile {
       order: 2;
     }
@@ -63,7 +60,7 @@
     aspect-ratio: 650 / 400;
 
     @include mobile {
-      width: 85vw;
+      width: 88vw;
     }
 
     &:last-of-type {
@@ -88,7 +85,8 @@
     align-items: center;
 
     @include mobile {
-      width: 14.8%;
+      width: clamp(70px, 14.8%, 100px);
+      bottom: 7%;
     }
 
   }
@@ -107,7 +105,7 @@
 
     @include mobile {
       position: absolute;
-      top: 0;
+      top: 5px;
       right: $page-side-margin-mobile;
     }
   }
@@ -118,24 +116,14 @@
     height: clamp(24px, 5.5vw, 50px);
     border-radius: 50%;
     background-color: $color-gray;
-    background-position: center center;
-    background-size: 18%;
-    background-repeat: no-repeat;
+    font-size: clamp(4.5px, 1vw, 7px);
 
     &_theme_dark {
       background-color: #434343;
+      color: $color-darkTheme-heading;
     }
 
     @include hover-opacity(0.75);
-
-    &_direction_previous {
-      background-image: url(../../images/pavements-button-previous.svg);
-    }
-
-    &_direction_next {
-      background-image: url(../../images/pavements-button-next.svg);
-    }
-
 
   }
 

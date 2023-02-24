@@ -6,6 +6,12 @@
     background-color: #2F2F2F;
   }
 
+  @include tablet {
+    padding: 60px $page-side-margin-tablet 40px $page-side-margin-tablet;
+    ;
+  }
+
+
   @include mobile {
     padding: 60px $page-side-margin-mobile 40px $page-side-margin-mobile;
     ;
@@ -18,7 +24,14 @@
     font-weight: 600;
     line-height: 32px;
     letter-spacing: 0em;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px;
     text-align: left;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
   }
 
   &__input-container {
@@ -47,15 +60,22 @@
     border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
+    transition: opacity .3s;
 
     &::placeholder {
       color: inherit;
     }
 
+    &:hover {
+      opacity: 1;
+      outline: 1px solid rgba(#C7C7C7, .5);
+    }
+
     &:focus {
       opacity: 1;
-
+      outline: 1px solid rgba(#C7C7C7, 1);
     }
+
   }
 
     &__send-button {
