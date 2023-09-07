@@ -69,7 +69,7 @@ function addTouchEndSliderListener(sliderWindow, goNextFunc, goPrevFunc) {
     if (window.innerWidth <= 550) {
       touchCoordinates.touchXEnd = evt.changedTouches[0].screenX;
       touchCoordinates.touchYEnd = evt.changedTouches[0].screenY;
-      if (Math.abs(touchCoordinates.touchYEnd - touchCoordinates.touchYEnd) < 100) {
+      if (Math.abs(touchCoordinates.touchYStart - touchCoordinates.touchYEnd) < 100) {
         touchCoordinates.touchXStart - touchCoordinates.touchXEnd > 20 && goNextFunc();
         touchCoordinates.touchXStart - touchCoordinates.touchXEnd < -20 && goPrevFunc();
         touchCoordinates.touchXStart = -1;
