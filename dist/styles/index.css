@@ -906,11 +906,11 @@
 }
 .bikes__img {
   width: 88%;
-  border-radius: 20px;
+  border-radius: 100px;
 }
 @media (max-width: 550px) {
   .bikes__img {
-    padding-bottom: 30px;
+    padding-bottom: 50px;
   }
 }
 .bikes__model {
