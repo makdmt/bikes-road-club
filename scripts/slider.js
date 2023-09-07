@@ -16,8 +16,10 @@ let activeBikeTypeIndex = bikesTypeSelector.selectedIndex;
 let activeBikeCardIndex = 0;
 
 const touchCoordinates = {
-  touchStart: -1,
-  touchEnd: -1
+  touchXStart: -1,
+  touchXEnd: -1,
+  touchYStart: -1,
+  touchYEnd: -1,
 }
 
 
@@ -55,19 +57,26 @@ addTouchEndSliderListener(bikesSliderWindow, () => changeBikeCard('next'), () =>
 //Вспомогательные функции
 function addTouchStartSliderListener(sliderWindow) {
   sliderWindow.addEventListener('touchstart', evt => {
-    touchCoordinates.touchStart = window.innerWidth <= 550 ? evt.targetTouches[0].screenX : -1;
+    if (window.innerWidth <= 550) {
+      touchCoordinates.touchXStart = evt.targetTouches[0].screenX;
+      touchCoordinates.touchYStart = evt.targetTouches[0].screenY;
+    }
   })
 }
 
 function addTouchEndSliderListener(sliderWindow, goNextFunc, goPrevFunc) {
   sliderWindow.addEventListener('touchend', evt => {
     if (window.innerWidth <= 550) {
-      touchCoordinates.touchEnd = evt.changedTouches[0].screenX;
-      touchCoordinates.touchStart - touchCoordinates.touchEnd > 20 && goNextFunc();
-      touchCoordinates.touchStart - touchCoordinates.touchEnd < -20 && goPrevFunc();
-
-      touchCoordinates.touchStart = -1;
-      touchCoordinates.touchEnd = -1;
+      touchCoordinates.touchXEnd = evt.changedTouches[0].screenX;
+      touchCoordinates.touchYEnd = evt.changedTouches[0].screenY;
+      if (Math.abs(touchCoordinates.touchYEnd - touchCoordinates.touchYEnd) < 100) {
+        touchCoordinates.touchXStart - touchCoordinates.touchXEnd > 20 && goNextFunc();
+        touchCoordinates.touchXStart - touchCoordinates.touchXEnd < -20 && goPrevFunc();
+        touchCoordinates.touchXStart = -1;
+        touchCoordinates.touchXEnd = -1;
+        touchCoordinates.touchYStart = -1;
+        touchCoordinates.touchYEnd = -1;
+      }
     }
   })
 }
